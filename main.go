@@ -40,6 +40,52 @@ func main() {
 
 	str := fmt.Sprintf("Hello %v", nameThree)
 	fmt.Println(str)
+	strOne := fmt.Sprintf("Hello %v", nameTwo)
+	fmt.Println(strOne)
+
+	//Array and slices
+
+	var ages [3]int = [3]int{20, 25, 30}
+	fmt.Println(ages)
+	names := [3]int{1, 2, 3}
+	fmt.Println(names[1])
+	//slices (uses arrays under the hood)
+	var scores [5]int = [5]int{1, 2, 3, 4, 5}
+	fmt.Println(scores, len(scores))
+	//both array and slice are mutable the diff btw the two is that array has specific number while slice do not have
+
+	arrOne := [3]string{"ayo", "ade", "bola"}
+	fmt.Println(arrOne)
+	sliceOne := []int{1, 2, 3}
+	fmt.Println(sliceOne)
+	arrOne[2] = "middey"
+	fmt.Println(arrOne)
+	sliceOne[1] = 3
+	fmt.Println(sliceOne)
+	//both are mutable , and the diff is that we can append slice
+	//Append do not mutate a slice but instead create another slices containing the update version
+
+	sliceOne = append(sliceOne, 4)
+	fmt.Println(sliceOne)
+	//to update a slice you just simply update the whole slice which means we are basically creating new slice and not the old one
+
+	studentNames := []string{"sunday", "oluwatobi", "marvelous"}
+	fmt.Println(studentNames)
+	studentNames = append(studentNames, "John")
+	fmt.Println(studentNames)
+
+	//slice range: it is used to take part of an array and add create a variable with it
+	rangeOne := sliceOne[1:3] //inclusive of the first number but not the last number
+	fmt.Println(rangeOne)
+	rangeTwo := sliceOne[2:3]
+	rangeThree := sliceOne[1:] //two inclusive and the rest upward
+	rangeFour := sliceOne[:3]
+	fmt.Println(rangeTwo)
+	fmt.Println(rangeThree)
+	fmt.Println(rangeFour)
+	sliceTwo := append(sliceOne, 5) //update slice
+	fmt.Println(sliceTwo)
+	//length of array cannot change , length of slices can change. You use slices most time and array is rarely used
 }
 
 //the shorthand for declaring variable cannot be used outside a function but var can be used to declare variable outside a function
