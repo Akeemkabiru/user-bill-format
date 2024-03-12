@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func main() {
 	var nameOne string = "Akeem"
@@ -21,6 +25,7 @@ func main() {
 	fmt.Println(floatValue)
 	var myName string = "Akeem Kabiru Sunday"
 	fmt.Print(myName, "\n")
+
 	//Println start from new line while Print and Printf do not
 	fmt.Println(myName)
 	fmt.Print(myName, "\n")
@@ -86,6 +91,30 @@ func main() {
 	sliceTwo := append(sliceOne, 5) //update slice
 	fmt.Println(sliceTwo)
 	//length of array cannot change , length of slices can change. You use slices most time and array is rarely used
+	//go libraries
+	userName := "Akeem \n"
+	hisName := strings.Contains(userName, "A")
+	fmt.Println(hisName)
+	herName := strings.Index(userName, "e")
+	theName := strings.ReplaceAll(userName, "e", "m")
+	fmt.Println(strings.ToUpper(userName))
+	fmt.Println(herName)
+	fmt.Println(theName)
+	fmt.Println(strings.Repeat(userName, 10))
+	fmt.Println(strings.Compare("akeem", "kabiru"))
+	fmt.Println(strings.Split(userName, "k"))
+	fmt.Println(strings.Count(userName, "e"))
+	fmt.Println(strings.Cut(userName, "e"))
+	fmt.Println(strings.Clone(userName))
+	studentsAge := []int{30, 10, 40, 20, 16}
+	sort.Ints(studentsAge) //mutate the slice
+	fmt.Println(append(studentsAge, 50))
+	bchStudnetsName := []string{"kabby", "toba", "tobi", "atiku"}
+	sort.Strings(bchStudnetsName)
+	fmt.Println(bchStudnetsName) //sorted in alphabetical order
+	fmt.Println(studentsAge)
+	fmt.Println(sort.SearchStrings(bchStudnetsName, "toba")) //do not mutate the slice
+	fmt.Println(sort.SearchInts(studentsAge, 30))
 }
 
 //the shorthand for declaring variable cannot be used outside a function but var can be used to declare variable outside a function
