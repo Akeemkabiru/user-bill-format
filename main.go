@@ -101,6 +101,7 @@ func main() {
 	fmt.Println(herName)
 	fmt.Println(theName)
 	fmt.Println(strings.Repeat(userName, 10))
+
 	fmt.Println(strings.Compare("akeem", "kabiru"))
 	fmt.Println(strings.Split(userName, "k"))
 	fmt.Println(strings.Count(userName, "e"))
@@ -115,6 +116,10 @@ func main() {
 	fmt.Println(studentsAge)
 	fmt.Println(sort.SearchStrings(bchStudnetsName, "toba")) //do not mutate the slice
 	fmt.Println(sort.SearchInts(studentsAge, 30))
+	fmt.Println(strings.Split("akeem", ""))
+	fmt.Println(strings.Cut("Akeem", "k"))
+	fmt.Println(strings.LastIndex("Akeem", "k"))
+
 }
 
 //the shorthand for declaring variable cannot be used outside a function but var can be used to declare variable outside a function
