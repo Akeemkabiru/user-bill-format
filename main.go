@@ -68,7 +68,7 @@
 //	sliceOne[1] = 3
 //	fmt.Println(sliceOne)
 //	//both are mutable , and the diff is that we can append slice
-//	//Append do not mutate a slice but instead create another slices containing the update version
+////	//Append do not mutate a slice but instead create another slices containing the update version
 //
 //	sliceOne = append(sliceOne, 4)
 //	fmt.Println(sliceOne)
@@ -124,16 +124,92 @@
 //
 ////the shorthand for declaring variable cannot be used outside a function but var can be used to declare variable outside a function
 ////%_ can be used for format specifier
-
-package main
-
-import "fmt"
-
-var names = []string{"akeem", "kabiru"} //global scope
-
-func main() {
-	fmt.Println(ageCalculator(20))
-	fmt.Println(courseMates)
-}
-
-//package scope
+//
+//package main
+//
+//import "fmt"
+//
+//var names = []string{"akeem", "kabiru"} //global scope
+//
+//func main() {
+//	fmt.Println(ageCalculator(20))
+//	fmt.Println(courseMates)
+//	newName := changeName("oyinda")
+//	fmt.Println(newName, herNames[1])
+//
+//}
+////package main
+////
+////import (
+////	"fmt"
+////	"math"
+////	"strings"
+////)
+////
+////func areaOfCircle(r float64) string {
+////	area := fmt.Sprintf("0.1%f", math.Pi*r*r)
+////	return area
+////}
+////
+////func goodBye(n string) {
+////	fmt.Printf("Hello %v \n", n)
+////}
+////func welcome(n []string, f func(string)) {
+////	for _, value := range n {
+////		fmt.Println(value)
+////	}
+////}
+////
+////func userName(n string) (string, string) {
+////	strSlice := strings.Split(n, " ")
+////	fmt.Println(strSlice)
+////	var initials []string
+////	for _, value := range strSlice {
+////		initials = append(initials, value[:1])
+////	}
+////
+////	return initials[0], initials[1]
+////}
+////func server() {
+////	goodBye("Kabby")
+////	welcome([]string{"akeem", "kabiru"}, goodBye)
+////	areaOne := areaOfCircle(2)
+////	areaTwo := areaOfCircle(3)
+////	fmt.Println(areaTwo, areaOne)
+////	return userName("Akeem Kabiru")
+////}
+////
+//////there should be just one main function in your main file which will be specified in each of other files
+//
+//package main
+//
+//import "fmt"
+//
+//var courseMates = map[string]int{
+//	"Oluwatobi": 70,
+//	"Akeem":     70,
+//	"Marvelous": 70,
+//}
+//var name string = "Dorcas"
+//var herNames []string = []string{"moradeke", "dorcas", "oyindamola", "ajini"}
+//
+//func changeName(n string) string {
+//	herNames[1] = n
+//	return herNames[1]
+//}
+//
+//func ageCalculator(n int) int {
+//	fmt.Println(herNames[1])
+//	fmt.Println(names)
+//	return 2024 - n
+//}
+//
+////Group A : strings, int, float, boolean, struct : non pointer wrapper
+////Group B: Slices, function, map pointer wrapper
+//
+//
+////package scope
+//
+//
+//
+//

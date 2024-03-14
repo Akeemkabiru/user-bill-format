@@ -1,58 +1,45 @@
-//package main
-//
-//import (
-//	"fmt"
-//	"math"
-//	"strings"
-//)
-//
-//func areaOfCircle(r float64) string {
-//	area := fmt.Sprintf("0.1%f", math.Pi*r*r)
-//	return area
-//}
-//
-//func goodBye(n string) {
-//	fmt.Printf("Hello %v \n", n)
-//}
-//func welcome(n []string, f func(string)) {
-//	for _, value := range n {
-//		fmt.Println(value)
-//	}
-//}
-//
-//func userName(n string) (string, string) {
-//	strSlice := strings.Split(n, " ")
-//	fmt.Println(strSlice)
-//	var initials []string
-//	for _, value := range strSlice {
-//		initials = append(initials, value[:1])
-//	}
-//
-//	return initials[0], initials[1]
-//}
-//func server() {
-//	goodBye("Kabby")
-//	welcome([]string{"akeem", "kabiru"}, goodBye)
-//	areaOne := areaOfCircle(2)
-//	areaTwo := areaOfCircle(3)
-//	fmt.Println(areaTwo, areaOne)
-//	return userName("Akeem Kabiru")
-//}
-//
-////there should be just one main function in your main file which will be specified in each of other files
-
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-var courseMates = map[string]int{
-	"Oluwatobi": 70,
-	"Akeem":     70,
-	"Marvelous": 70,
+func sum(n []int) int {
+	var totalValue = 0
+	for i := 0; i < len(n); i++ {
+		totalValue = totalValue + n[i]
+	}
+	return totalValue
 }
 
-func ageCalculator(n int) int {
+func userName(n string, m string) []string {
+	nameSlice := []string{n, m}
+	var initials []string
+	for _, value := range nameSlice {
+		initials = append(initials, strings.ToUpper(value[:1]))
+	}
+	return initials
+}
 
-	fmt.Println(names)
-	return 2024 - n
+var userScore = map[string]any{
+	"name":       "Akeem",
+	"age":        23,
+	"department": "Biochemistry",
+}
+
+func changeDepartment(n map[string]any, m int) any {
+	n["age"] = m
+	return n
+}
+
+var myNames = "Akeem"
+
+func main() {
+	total := sum([]int{1, 2, 3, 4, 5})
+	fmt.Println(total)
+	fmt.Println(userName("akeem", "kabiru"))
+	fmt.Println(changeDepartment(userScore, 30))
+	fmt.Printf("what is your name? %q \n", myNames)
+	fmt.Println("hello", myNames)
 }
