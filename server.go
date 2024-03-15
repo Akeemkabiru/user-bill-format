@@ -5,6 +5,14 @@ import (
 	"strings"
 )
 
+//Struct is a Non pointer wrapper that is used as blueprint in creating an object equivalent
+
+type bill struct {
+	name string
+	bill map[string]float64
+	tip  float64
+}
+
 func sum(n []int) int {
 	var totalValue = 0
 	for i := 0; i < len(n); i++ {
@@ -35,11 +43,12 @@ func changeDepartment(n map[string]any, m int) any {
 
 var myNames = "Akeem"
 
-func main() {
-	total := sum([]int{1, 2, 3, 4, 5})
-	fmt.Println(total)
-	fmt.Println(userName("akeem", "kabiru"))
-	fmt.Println(changeDepartment(userScore, 30))
-	fmt.Printf("what is your name? %q \n", myNames)
-	fmt.Println("hello", myNames)
+// look for the value at the memory loaction passed here and use it in the function
+func updateName(x *string) {
+	*x = "akeem"
+	fmt.Println(&x)
 }
+
+// Pointer wrapper values : maps, functions, slices store both value and variable name in separate memory location
+// Non Pointer Value : integer, float, string, struct , boolean stores their value and name in same memory block
+// & ampersand  is used to locate memory address of a value while * is used as pointer to get value in a memory address
