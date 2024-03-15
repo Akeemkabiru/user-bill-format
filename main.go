@@ -15,4 +15,6 @@ func main() {
 	fmt.Println(&newName)
 	fmt.Println(newBill("Ezekiel"))
 	fmt.Println(newBill("akeem").format())
+	fmt.Println(newBill("akeem").updateBill("iphone 11", 0.4))
+	fmt.Println(newBill("kabiru").updateTips(30))
 }
