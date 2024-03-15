@@ -7,11 +7,11 @@ import (
 
 //Struct is a Non pointer wrapper that is used as blueprint in creating an object equivalent
 
-type bill struct {
-	name string
-	bill map[string]float64
-	tip  float64
-}
+//type bill struct {
+//	name string
+//	bill map[string]float64
+//	tip  float64
+//}
 
 func sum(n []int) int {
 	var totalValue = 0

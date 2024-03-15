@@ -13,4 +13,5 @@ func main() {
 	m := &newName
 	updateName(m) //a copy of the newName is created and stored in another memory location
 	fmt.Println(&newName)
+	fmt.Println(newBill("Ezekiel"))
 }
