@@ -17,4 +17,6 @@ func main() {
 	fmt.Println(newBill("akeem").format())
 	fmt.Println(newBill("akeem").updateBill("iphone 11", 0.4))
 	fmt.Println(newBill("kabiru").updateTips(30))
+	fmt.Println(newBill("akeem").updateName("ayinde"))
+	fmt.Println(newUser("akeem", "kabbydev@gmail", "kabby@12", map[string]float64{"number of course bought": 20}).userName())
 }

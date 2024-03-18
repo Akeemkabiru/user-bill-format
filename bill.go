@@ -1,6 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+type user struct {
+	name     string
+	email    string
+	password string
+	products map[string]float64
+}
+
+func newUser(name string, email string, password string, products map[string]float64) user {
+	firstUser := user{
+		name:     name,
+		email:    email,
+		password: password,
+		products: products,
+	}
+	return firstUser
+}
+
+func (firstUser user) userName() string {
+	firstLetter := firstUser.name[:2]
+	return strings.ToUpper(firstLetter)
+}
 
 type bill struct {
 	name string
@@ -38,5 +63,16 @@ func (b bill) updateTips(newTip float64) float64 {
 	b.tip = newTip
 	return b.tip
 }
+
+func (b bill) updateName(n string) string {
+	b.name = n
+	return n
+}
+
+// slice
+var scores []int = []int{1, 2, 3, 4}
+
+// map
+var users map[string]string = map[string]string{"Akeem": "Man"}
 
 //receiver function that update the bill and change the tip
