@@ -76,3 +76,11 @@ var scores []int = []int{1, 2, 3, 4}
 var users map[string]string = map[string]string{"Akeem": "Man"}
 
 //receiver function that update the bill and change the tip
+
+// Pointer and Memory
+func memo() {
+	age := 20
+	m := &age
+	fmt.Println(m)  //ampersand is used to get location of a value in memory
+	fmt.Println(*m) //asteriks is used to find value in a particular memory location
+}
