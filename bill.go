@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 type bill struct {
 	name  string
@@ -42,6 +47,44 @@ func (b bill) addBill(product string, price float64) map[string]float64 {
 	return b.bills
 }
 
+// user input
+// create a reader with bufio package that read from standard input(stdin)
+
+// Using helper function to for the logic of reading user input from the terminal
+
+//func getInput(prompt string, r *bufio.Reader) (string, error) {
+//	fmt.Print(prompt)
+//	input, err = r.ReadString('\n')
+//	return strings.TrimSpace(input), err
+//}
+
+func createBill() bill {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("creat a new bill name:")
+	//read the string that was input on the terminal and save in name while err is the error which is denoted with _ since it is not needed here
+	name, _ := reader.ReadString('\n')
+	name = strings.TrimSpace(name)
+	b := newBill(name)
+	return b
+}
+
+func promptOptions() {
+	fmt.Println("choose an option (a-add item) (s-save bill) (t-add tip)")
+	reader := bufio.NewReader(os.Stdin)
+	opt, _ := reader.ReadString('\n')
+	switch strings.TrimSpace(opt) {
+	case "a":
+		fmt.Println("add")
+	case "s":
+		fmt.Println("save bill")
+	case "t":
+		fmt.Println("add tip")
+	default:
+		fmt.Println("that was not a valid option")
+	}
+
+}
+
 // main
 func main() {
 	bill := newBill("Akeem")
@@ -51,4 +94,6 @@ func main() {
 	newTip := newBill("akeem").updateTip(30)
 	fmt.Println(newTip)
 	fmt.Println(newBill("Dorcas"))
+	fmt.Println(createBill())
+	promptOptions()
 }
